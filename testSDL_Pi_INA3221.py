@@ -20,7 +20,7 @@ print ""
 print "Test SDL_Pi_INA3221 Version 1.0 - SwitchDoc Labs"
 print ""
 print "Sample uses 0x40 and SunAirPlus board INA3221"
-print " But will work with the INA3221 SwitchDoc Labs Breakout Board"
+print " Will work with the INA3221 SwitchDoc Labs Breakout Board"
 print "Program Started at:"+ time.strftime("%Y-%m-%d %H:%M:%S")
 print ""
 
@@ -47,7 +47,7 @@ while True:
   	busvoltage1 = ina3221.getBusVoltage_V(LIPO_BATTERY_CHANNEL)
   	shuntvoltage1 = ina3221.getShuntVoltage_mV(LIPO_BATTERY_CHANNEL)
   	# minus is to get the "sense" right.   - means the battery is charging, + that it is discharging
-  	current_mA1 = -ina3221.getCurrent_mA(LIPO_BATTERY_CHANNEL)  
+  	current_mA1 = ina3221.getCurrent_mA(LIPO_BATTERY_CHANNEL)  
 
   	loadvoltage1 = busvoltage1 + (shuntvoltage1 / 1000)
   
@@ -91,4 +91,4 @@ while True:
 		
 
 	#
-	time.sleep(10.0)
+	time.sleep(2.0)
